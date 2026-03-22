@@ -70,6 +70,7 @@ doTasksBtn.addEventListener("click", () => {
     return;
   }
   pet.stability += 10;
+  pet.connection +=10;
   pet.vitality += 5;
   updateStats();
   updateBarStats();
@@ -81,6 +82,7 @@ connectBtn.addEventListener("click", () => {
     return;
   }
   pet.connection +=10;
+  pet.stability += 10;
   pet.vitality += 5;
   updateStats();
   updateBarStats();
