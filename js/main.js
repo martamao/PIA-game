@@ -16,7 +16,7 @@ let pet = {
 };
 
 const savedPet = localStorage.getItem("pet");
-//hay algo guardado con la clave pet?”
+//hay algo guardado con la clave pet?
 if (savedPet) {
   pet = JSON.parse(savedPet);
   //Convierte texto en objeto
@@ -33,10 +33,11 @@ function updateStats() {
   pet.vitality =  Math.min(100, Math.max(0, pet.vitality));
   pet.stability =  Math.min(100, Math.max(0, pet.stability));
   pet.connection =  Math.min(100, Math.max(0, pet.connection));
-
+/*
   petVitality.innerHTML = `${pet.vitality}`;
   petStability.innerHTML = `${pet.stability}`;
   petConnection.innerHTML = `${pet.connection}`;
+*/
   localStorage.setItem("pet", JSON.stringify(pet));
 
   if (pet.vitality === 0){
@@ -69,6 +70,7 @@ doTasksBtn.addEventListener("click", () => {
     return;
   }
   pet.stability += 10;
+  pet.vitality += 5;
   updateStats();
   updateBarStats();
 
@@ -79,6 +81,7 @@ connectBtn.addEventListener("click", () => {
     return;
   }
   pet.connection +=10;
+  pet.vitality += 5;
   updateStats();
   updateBarStats();
 
@@ -91,7 +94,7 @@ setInterval(() => {
   updateStats();
   updateBarStats();
 
-}, 5000); // cada 5 segundos
+}, 5000);
 updateStats();
 updateBarStats();
 
